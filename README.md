@@ -6,7 +6,7 @@
 3.接口调用简单方便
 ## 说明
 定义接口
-```java
+```
     public interface FlowService {
         @GET("/api/action/datastore_search")
         Observable<Result<FlowResult>> getFlow(@Query("resource_id") String resourceId,@Query("offset") int offset, @Query("limit") int limit);
@@ -38,7 +38,7 @@
     }
 ```
 http单例
-```java
+```
 public class Http {
 
     private static final int DEFAULT_TIMEOUT = 5;
@@ -72,9 +72,9 @@ public class Http {
         return SingletonHolder.INSTANCE;
     }
 }
-```使用Gson进行数据的解析在retrofit请求返回之前进行拦截解析
-```java
-```java
+```
+使用Gson进行数据的解析在retrofit请求返回之前进行拦截解析
+```
 class GsonResponseBodyConverter<T> implements Converter<ResponseBody, T> {
     private final Gson gson;
     private final Type type;
@@ -93,7 +93,7 @@ class GsonResponseBodyConverter<T> implements Converter<ResponseBody, T> {
 }
 ```
 对返回数据的异常进行处理
-```java
+```
 public class ApiException extends RuntimeException {
 
 
@@ -117,7 +117,7 @@ public class ApiException extends RuntimeException {
 }
 ```
 数据请求进行流程进行监听
-```java
+```
 /**
  * 用于在Http请求开始时，自动回调开始请求
  * 在Http请求结束是，自动回调请求结束
